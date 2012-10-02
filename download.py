@@ -7,5 +7,5 @@ class MainPage(handler.Handler):
     def get(self):
         self.write("Hello, Download World")
 
-app = webapp2.WSGIApplication([('/download/1', MainPage)], debug=True)
+app = webapp2.WSGIApplication([('/download/1a2b3cd456gh', MainPage)], debug=True)
 

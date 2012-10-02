@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Sample Form
+    </title>
+    <link href="/assets/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="hero-unit">     <!-- hero unit -->
+        <h1 id="heading">Course Evaluation Form A</h1>
+
+        <p></p>
+
+        <div class="row">
+            <form method="POST" class="well form-horizontal" style="background: #fff">
+
+                <fieldset>
+
+                    <legend>First fieldset</legend>
+
+                    <div class="control-group">
+                        <label class="control-label" for="rating2.1">
+                            The Form label which is very very very long
+                        </label>
+
+                        <div class="controls">
+                            <select class="input-medium" id="rating2.1" name="rating2.1" required="required">
+                                <option value="">Select an Option...</option>
+                                <option value="1">Sunny</option>
+                                <option value="2">Cloudy</option>
+                                <option value="3">Rainy</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+                </fieldset>
+
+
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.dropdown-toggle').dropdown();
+        prettyPrint();
+    });
+
+</script>
+
+</body>
+
+</html>
+

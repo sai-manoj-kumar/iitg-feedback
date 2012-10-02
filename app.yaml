@@ -7,6 +7,8 @@ threadsafe: true
 handlers:
 - url: /css
   static_dir: css
+- url: /assets
+  static_dir: assets
 - url: /download/.*
   script: download.app
   login:  admin

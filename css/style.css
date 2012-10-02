@@ -1,9 +1,64 @@
+@import url(http://fonts.googleapis.com/css?family=Rosarivo:400,400italic);
 
 body {
     font-family: "Rosarivo", serif;
     width: 1000px;
     margin: 0 auto;
     padding: 10px;
-    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 20px;
+}
+
+hr {
+    margin: 20px auto;
+}
+
+.error {
+    color: red;
+}
+
+input[type="text"]{
+    width: 400px;
+    padding: 2px;
+    font-family: "Garamond", serif;
+}
+
+textarea {
+    display: block;
+    width: 400px;
+    height: 200px;
+    font-size: 17px;
+    font-family: "Garamond", serif;
+}
+
+input[type="submit"] {
+    font-size: 18px;
+}
+
+hr {
+    margin: 20px auto;
+}
+
+.post {
+    margin-top: 80px;
+    margin-bottom:100px;
+}
+
+h1 a,h4 a {
+    text-decoration: none;
+    color: inherit;
+    -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out;
+}
+
+h1 a:hover, h4 a:hover {
+    -webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out;
+    text-shadow: 1px 1px 6px #888;
+}
+
+#footer {
+    height: 200px;
 }
 
