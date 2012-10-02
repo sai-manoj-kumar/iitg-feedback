@@ -1,4 +1,4 @@
-application: feedback
+application: iitgfeedback
 version: 0
 runtime: python27
 api_version: 1
@@ -9,9 +9,6 @@ handlers:
   static_dir: css
 - url: /assets
   static_dir: assets
-- url: /download/.*
-  script: download.app
-  login:  admin
 - url: /.*
   script: main.app
 
