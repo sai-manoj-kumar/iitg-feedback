@@ -31,8 +31,7 @@ class FormA(db.Model):
     rating5_3 = db.IntegerProperty(required=True)
     rating5_4 = db.IntegerProperty(required=True)
     rating5_5 = db.IntegerProperty(required=True)
-    comment = db.StringProperty(required=True)
-
+    comment = db.StringProperty()
 
 
 class Keys(db.Model):
