@@ -26,4 +26,6 @@ class MainPage(handler.Handler):
         entry = model.FormA(keyPhrase=key, **values)
         if entry.put():
             self.write("Successfully Written in database")
+        else:
+            self.write("Error writing to database")
 
