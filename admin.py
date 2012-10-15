@@ -4,6 +4,7 @@ from google.appengine.api import users
 import webapp2
 import handler
 import download
+import genkeys
 
 class MainPage(handler.Handler):
     def get(self):
@@ -17,8 +18,9 @@ class MainPage(handler.Handler):
             self.redirect(users.create_login_url(self.request.uri))
 
 app = webapp2.WSGIApplication([
-    ('/admin', MainPage),
-    ('/admin/download', download.MainPage),
+    ('/admin/*', MainPage),
+    ('/admin/genkeys/*', genkeys.GenerateKeys),
+    ('/admin/download/*', download.MainPage),
     ('/admin/download/.*', download.MainPage)],
     debug=True)
 

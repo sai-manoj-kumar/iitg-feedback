@@ -37,3 +37,5 @@ class FormA(db.Model):
 class Keys(db.Model):
     keyPhrase = db.StringProperty(required=True)
     formFilled = db.BooleanProperty(required=True)
+
+    
