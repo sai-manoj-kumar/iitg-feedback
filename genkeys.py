@@ -3,7 +3,6 @@ __author__ = 'saimanoj'
 from google.appengine.api import users
 from google.appengine.ext import db
 import random
-import string
 import model
 import handler
 
@@ -19,6 +18,7 @@ class GenerateKeys(handler.Handler):
                     key = ''.join(random.choice(
                         'abcdefghkmnqrstuvwxyzABCDEFGHJKMNQRSTUVWXYZ' * 7 + '23456789' * 13) for x in range(10))
                     if key not in keys:
+#                        TODO check whether the key is already in the datastore
                         keys.append(key)
                         key_entries.append(model.Keys(keyPhrase=key, formFilled=False))
                         i += 1
@@ -34,4 +34,5 @@ class GenerateKeys(handler.Handler):
             self.redirect(users.create_login_url(self.request.uri))
 
     def get(self):
-        self.render("notify_admin.jinja2")
+        count = model.Keys.all().count()
+        self.render("notify_admin.jinja2", count=count)
