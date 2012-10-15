@@ -4,6 +4,7 @@ import webapp2
 from google.appengine.api import users
 import handler
 import formA
+import generate_keys
 import download
 
 class MainPage(handler.Handler):
@@ -18,5 +19,6 @@ class MainPage(handler.Handler):
 
 
 app = webapp2.WSGIApplication([('/', MainPage),
-    ('/formA', formA.MainPage)],
+    ('/formA', formA.MainPage),
+    ('/genkeys', generate_keys.GenerateKeys)],
     debug=True)
