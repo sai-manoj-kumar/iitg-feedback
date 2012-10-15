@@ -5,10 +5,15 @@ import webapp2
 from google.appengine.api import users
 import jinja2
 
+import config
+
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=True)
 
 class Handler(webapp2.RequestHandler):
+    is_admin = False
+    is_logged_in = False
+
     def write(self, *a, **kw):
         self.response.out.write(*a, **kw)
 
@@ -22,5 +27,10 @@ class Handler(webapp2.RequestHandler):
     def initialize(self, *a, **kw):
         webapp2.RequestHandler.initialize(self, *a, **kw)
         self.user = users.get_current_user()
+        if self.user:
+            self.is_logged_in = True
+        if self.user.nickname() in config.admins:
+            self.is_admin = True
+
 
 

@@ -2,12 +2,11 @@ __author__ = 'saimanoj'
 
 from google.appengine.api import users
 import handler
-import config
 
 class MainPage(handler.Handler):
     def get(self):
-        if self.user:
-            if self.user.nickname() in config.admins:
+        if self.is_logged_in:
+            if self.is_admin:
                 self.render("download.jinja2")
             else:
                 self.write("You are not an admin and can not download data")

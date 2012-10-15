@@ -5,12 +5,11 @@ from google.appengine.api import users
 import handler
 import formA
 import download
-import config
 
 class MainPage(handler.Handler):
     def get(self):
-        if self.user:
-            if self.user.nickname() in config.admins:
+        if self.is_logged_in:
+            if self.is_admin:
                 self.redirect('/admin')
             else:
                 self.render('index.jinja2')
@@ -19,6 +18,5 @@ class MainPage(handler.Handler):
 
 
 app = webapp2.WSGIApplication([('/', MainPage),
-    ('/formA', formA.MainPage),
-    ('/download/.*', download.MainPage)],
+    ('/formA', formA.MainPage)],
     debug=True)
