@@ -4,7 +4,6 @@ import webapp2
 from google.appengine.api import users
 import handler
 import formA
-import download
 
 class MainPage(handler.Handler):
     def get(self):
@@ -18,5 +17,5 @@ class MainPage(handler.Handler):
 
 
 app = webapp2.WSGIApplication([('/', MainPage),
-    ('/formA', formA.MainPage)],
+    ('/formA/*', formA.MainPage)],
     debug=True)

@@ -1,7 +1,9 @@
 __author__ = 'saimanoj'
 
 from google.appengine.api import users
+import webapp2
 import handler
+
 
 class MainPage(handler.Handler):
     def get(self):
@@ -13,3 +15,4 @@ class MainPage(handler.Handler):
         else:
             self.redirect(users.create_login_url(self.request.uri))
 
+app = webapp2.WSGIApplication([('/download/data', MainPage)], debug=True)

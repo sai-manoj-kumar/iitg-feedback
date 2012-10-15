@@ -1,7 +1,7 @@
 __author__ = 'saimanoj'
 
 import handler
-import model
+from model import *
 
 class MainPage(handler.Handler):
     def get(self):
@@ -23,9 +23,17 @@ class MainPage(handler.Handler):
             values['rating5_' + str(i)] = int(self.request.get('rating5.' + str(i)))
 
         values['comment'] = self.request.get('comment')
-        entry = model.FormA(keyPhrase=key, **values)
-        if entry.put():
-            self.write("Successfully Written in database")
-        else:
-            self.write("Error writing to database")
+        key_record = Keys.by_name(key)
 
+        if key_record:
+            if not key_record.formFilled:
+                feedback_entry = FormA(keyPhrase=key, **values)
+                key_record.formFilled = True
+                if key_record.put() and feedback_entry.put():
+                    self.write("Successfully Written in database")
+                else:
+                    self.write("Error writing to database")
+            else:
+                self.write("You have already filled the form")
+        else:
+            self.write("Entered key is wrong")

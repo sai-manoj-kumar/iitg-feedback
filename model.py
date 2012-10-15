@@ -3,8 +3,6 @@ __author__ = 'saimanoj'
 from google.appengine.ext import db
 
 
-
-
 class FormA(db.Model):
     keyPhrase = db.StringProperty(required=True)
     rating2_1 = db.IntegerProperty(required=True)
@@ -37,5 +35,9 @@ class FormA(db.Model):
 class Keys(db.Model):
     keyPhrase = db.StringProperty(required=True)
     formFilled = db.BooleanProperty(required=True)
+    timestamp = db.DateTimeProperty(auto_now_add=True)
 
-    
+    @classmethod
+    def by_name(cls, key):
+        return cls.all().filter('keyPhrase = ', key).get()
+
