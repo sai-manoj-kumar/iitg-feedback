@@ -1,0 +1,45 @@
+{% extends "base.jinja2" %}
+
+{% block title %}
+    IIT Guwahati CSE Feedback System -- Admin Section
+{% endblock title %}
+
+{% block formlinks %}
+{% endblock formlinks %}
+
+{% block body %}
+
+    <div class="well">
+        <h1>
+            Welcome to Admin Section
+        </h1>
+    </div>
+    <div class="well">
+        <form method="get" action="/admin/download/formA">
+            <h2 style="display: inline;">Form A</h2>
+            <button class="btn btn-primary btn-large" style="margin-left: 20px">Download "Form A" Data</button>
+        </form>
+    </div>
+    <div class="well">
+        <form method="get" action="/admin/download/formB">
+            <h2 style="display: inline;">Form B</h2>
+            <button class="btn btn-primary btn-large" style="margin-left: 20px">Download "Form B" Data</button>
+        </form>
+    </div>
+    <div class="well">
+        <form method="get" action="/admin/download/formC">
+            <h2 style="display: inline;">Form C</h2>
+            <button class="btn btn-primary btn-large" style="margin-left: 20px">Download "Form C" Data</button>
+        </form>
+    </div>
+
+    <div class="well">
+        <form class="inline" method="post" action="/admin/genkeys">
+            <label>
+                No. of Keys to be generated
+                <input type="text" name="num_keys" id="num_keys">
+            </label>
+            <button type="submit" class="btn btn-danger btn-large">Generate Keys</button>
+        </form>
+    </div>
+{% endblock body %}
