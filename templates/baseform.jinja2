@@ -1,0 +1,16 @@
+{% extends "base.jinja2" %}
+
+{% block body %}
+
+    {% block heading %}
+    {% endblock heading %}
+    <p></p>
+    <div class="row">
+        <form method="POST" class="well form-horizontal" style="background: #fff">
+            {% block form %}
+
+            {% endblock form %}
+        </form>
+    </div>
+
+{% endblock body %}

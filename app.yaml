@@ -9,6 +9,8 @@ handlers:
   static_dir: css
 - url: /assets
   static_dir: assets
+- url: /admin.*
+  script: admin.app
 - url: /.*
   script: main.app
 

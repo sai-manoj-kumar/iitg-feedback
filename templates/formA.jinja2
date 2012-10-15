@@ -1,461 +1,217 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "baseform.jinja2" %}
 
-<head>
-    <meta charset="utf-8"/>
-    <meta name="description" content="Course Evaluation Form A">
-    <title>
-        Course Feedback Form A
-    </title>
-    {#    <link href="/css/style.css" type="text/css" rel="stylesheet"/>#}
-    <link href="/assets/css/bootstrap.css" type="text/css" rel="stylesheet"/>
-</head>
+{% block heading %}
+    <h1 id="heading">Course Evaluation Form A</h1>
+{% endblock heading %}
 
-<body style="background: #f5f5f5">
+{% block form %}
 
+    <fieldset>
+        <legend>1. Your Unique Key Phrase</legend>
+        <div class="control-group">
+            <label class="control-label" for="key" style="width: 300px;">Enter your Key here </label>
 
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="/">Home</a>
-
-            <div class="nav-collapse">
-                <ul class="nav">
-                    <li><a href="/formA">Form A</a></li>
-                    <li><a href="/formB">Form B</a></li>
-                    <li><a href="/formC">Form C</a></li>
-                </ul>
+            <div class="controls" style="margin-left:320px;">
+                <input type="text" name="key" id="key" class="input-xlarge" required="required"/>
             </div>
-            <!--/.nav-collapse -->
-
         </div>
-    </div>
-</div>
+    </fieldset>
 
+    <fieldset>
 
-<div class="container">
-<div class="hero-unit">     <!-- hero unit -->
-<h1 id="heading">Course Evaluation Form A</h1>
+        <legend>2. About myself</legend>
 
-<p></p>
+        <div class="control-group">
+            <label class="control-label" for="rating2.1">
+                My attendance in the classes of the course is
+            </label>
 
-<div class="row">
-<form method="POST" class="well form-horizontal" style="background: #fff">
-<fieldset>
-    <legend>1. Your Unique Key Phrase</legend>
-    <div class="control-group">
-        <label class="control-label" for="key" style="width: 300px;">Enter your Key here </label>
+            <div class="controls">
+                <!-- single dropdown -->
+                <select class="input-medium" id="rating2.1" name="rating2.1" required="required">
+                    <option value="">Give Rating...</option>
+                    <option value="1">Very Poor</option>
+                    <option value="2">Poor</option>
+                    <option value="3">Average</option>
+                    <option value="4">Good</option>
+                    <option value="5">Very Good</option>
+                </select>
 
-        <div class="controls" style="margin-left:320px;">
-            <input type="text" name="key" id="key" class="input-xlarge" required="required"/>
+            </div>
         </div>
-    </div>
-</fieldset>
+        <div class="control-group">
+            <label class="control-label" for="rating2.2">
+                My preparation before going to the class was
+            </label>
 
-<fieldset>
+            <div class="controls">
+                <!-- single dropdown -->
+                <select class="input-medium" id="rating2.2" name="rating2.2" required="required">
+                    <option value="">Give Rating...</option>
+                    <option value="1">Very Poor</option>
+                    <option value="2">Poor</option>
+                    <option value="3">Average</option>
+                    <option value="4">Good</option>
+                    <option value="5">Very Good</option>
+                </select>
 
-    <legend>2. About myself</legend>
+            </div>
+        </div>
+        <div class="control-group">
+            <label class="control-label" for="rating2.3">
+                My expected grade in the course is
+            </label>
+
+            <div class="controls">
+                <!-- single dropdown -->
+                <select class="input-medium" id="rating2.3" name="rating2.3" required="required">
+                    <option value="">Give Rating...</option>
+                    <option value="1">Very Poor</option>
+                    <option value="2">Poor</option>
+                    <option value="3">Average</option>
+                    <option value="4">Good</option>
+                    <option value="5">Very Good</option>
+                </select>
+
+            </div>
+        </div>
+
+    </fieldset>
+
+
+    <fieldset>
+
+        <legend>3. About the Course</legend>
+
+        <div class="control-group">
+            <label class="control-label" for="rating3.1">
+                A detailed course syllabus was provided at the beginning of the course
+            </label>
+
+            <div class="controls">
+                <!-- single dropdown -->
+                <select class="input-medium" id="rating3.1" name="rating3.1" required="required">
+                    <option value="">Give Rating...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="rating3.2">
+                Text books were appropriate for the course
+            </label>
+
+            <div class="controls">
+                <!-- single dropdown -->
+                <select class="input-medium" id="rating3.2" name="rating3.2" required="required">
+                    <option value="">Give Rating...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="rating3.3">
+                Reference books provided good support for the course
+            </label>
+
+            <div class="controls">
+                <!-- single dropdown -->
+                <select class="input-medium" id="rating3.3" name="rating3.3" required="required">
+                    <option value="">Give Rating...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="rating3.4">
+                The course timing in he time-table was appropriate
+            </label>
+
+            <div class="controls">
+                <!-- single dropdown -->
+                <select class="input-medium" id="rating3.4" name="rating3.4" required="required">
+                    <option value="">Give Rating...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="rating3.5">
+                The course load was very heavy
+            </label>
+
+            <div class="controls">
+                <!-- single dropdown -->
+                <select class="input-medium" id="rating3.5" name="rating3.5" required="required">
+                    <option value="">Give Rating...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="rating3.6">
+                The course was highly enjoyable
+            </label>
+
+            <div class="controls">
+                <!-- single dropdown -->
+                <select class="input-medium" id="rating3.6" name="rating3.6" required="required">
+                    <option value="">Give Rating...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+
+            </div>
+        </div>
+
+    </fieldset>
+
+    <fieldset>
+
+    <legend>4. About the Instructor</legend>
+
 
     <div class="control-group">
-        <label class="control-label" for="rating2.1">
-            My attendance in the classes of the course is
+        <label class="control-label" for="rating4.1">
+            The course material was organized properly
         </label>
 
         <div class="controls">
             <!-- single dropdown -->
-            <select class="input-medium" id="rating2.1" name="rating2.1" required="required">
-                <option value="">Give Rating...</option>
-                <option value="1">Very Poor</option>
-                <option value="2">Poor</option>
-                <option value="3">Average</option>
-                <option value="4">Good</option>
-                <option value="5">Very Good</option>
-            </select>
-
-        </div>
-    </div>
-    <div class="control-group">
-        <label class="control-label" for="rating2.2">
-            My preparation before going to the class was
-        </label>
-
-        <div class="controls">
-            <!-- single dropdown -->
-            <select class="input-medium" id="rating2.2" name="rating2.2" required="required">
-                <option value="">Give Rating...</option>
-                <option value="1">Very Poor</option>
-                <option value="2">Poor</option>
-                <option value="3">Average</option>
-                <option value="4">Good</option>
-                <option value="5">Very Good</option>
-            </select>
-
-        </div>
-    </div>
-    <div class="control-group">
-        <label class="control-label" for="rating2.3">
-            My expected grade in the course is
-        </label>
-
-        <div class="controls">
-            <!-- single dropdown -->
-            <select class="input-medium" id="rating2.3" name="rating2.3" required="required">
-                <option value="">Give Rating...</option>
-                <option value="1">Very Poor</option>
-                <option value="2">Poor</option>
-                <option value="3">Average</option>
-                <option value="4">Good</option>
-                <option value="5">Very Good</option>
-            </select>
-
-        </div>
-    </div>
-
-</fieldset>
-
-
-<fieldset>
-
-    <legend>3. About the Course</legend>
-
-    <div class="control-group">
-        <label class="control-label" for="rating3.1">
-            A detailed course syllabus was provided at the beginning of the course
-        </label>
-
-        <div class="controls">
-            <!-- single dropdown -->
-            <select class="input-medium" id="rating3.1" name="rating3.1" required="required">
-                <option value="">Give Rating...</option>
-                <option value="1">Strongly Disagree</option>
-                <option value="2">Disagree</option>
-                <option value="3">Neutral</option>
-                <option value="4">Agree</option>
-                <option value="5">Strongly Agree</option>
-            </select>
-
-        </div>
-    </div>
-
-    <div class="control-group">
-        <label class="control-label" for="rating3.2">
-            Text books were appropriate for the course
-        </label>
-
-        <div class="controls">
-            <!-- single dropdown -->
-            <select class="input-medium" id="rating3.2" name="rating3.2" required="required">
-                <option value="">Give Rating...</option>
-                <option value="1">Strongly Disagree</option>
-                <option value="2">Disagree</option>
-                <option value="3">Neutral</option>
-                <option value="4">Agree</option>
-                <option value="5">Strongly Agree</option>
-            </select>
-
-        </div>
-    </div>
-
-    <div class="control-group">
-        <label class="control-label" for="rating3.3">
-            Reference books provided good support for the course
-        </label>
-
-        <div class="controls">
-            <!-- single dropdown -->
-            <select class="input-medium" id="rating3.3" name="rating3.3" required="required">
-                <option value="">Give Rating...</option>
-                <option value="1">Strongly Disagree</option>
-                <option value="2">Disagree</option>
-                <option value="3">Neutral</option>
-                <option value="4">Agree</option>
-                <option value="5">Strongly Agree</option>
-            </select>
-
-        </div>
-    </div>
-
-    <div class="control-group">
-        <label class="control-label" for="rating3.4">
-            The course timing in he time-table was appropriate
-        </label>
-
-        <div class="controls">
-            <!-- single dropdown -->
-            <select class="input-medium" id="rating3.4" name="rating3.4" required="required">
-                <option value="">Give Rating...</option>
-                <option value="1">Strongly Disagree</option>
-                <option value="2">Disagree</option>
-                <option value="3">Neutral</option>
-                <option value="4">Agree</option>
-                <option value="5">Strongly Agree</option>
-            </select>
-
-        </div>
-    </div>
-
-    <div class="control-group">
-        <label class="control-label" for="rating3.5">
-            The course load was very heavy
-        </label>
-
-        <div class="controls">
-            <!-- single dropdown -->
-            <select class="input-medium" id="rating3.5" name="rating3.5" required="required">
-                <option value="">Give Rating...</option>
-                <option value="1">Strongly Disagree</option>
-                <option value="2">Disagree</option>
-                <option value="3">Neutral</option>
-                <option value="4">Agree</option>
-                <option value="5">Strongly Agree</option>
-            </select>
-
-        </div>
-    </div>
-
-    <div class="control-group">
-        <label class="control-label" for="rating3.6">
-            The course was highly enjoyable
-        </label>
-
-        <div class="controls">
-            <!-- single dropdown -->
-            <select class="input-medium" id="rating3.6" name="rating3.6" required="required">
-                <option value="">Give Rating...</option>
-                <option value="1">Strongly Disagree</option>
-                <option value="2">Disagree</option>
-                <option value="3">Neutral</option>
-                <option value="4">Agree</option>
-                <option value="5">Strongly Agree</option>
-            </select>
-
-        </div>
-    </div>
-
-</fieldset>
-
-<fieldset>
-
-<legend>4. About the Instructor</legend>
-
-
-<div class="control-group">
-    <label class="control-label" for="rating4.1">
-        The course material was organized properly
-    </label>
-
-    <div class="controls">
-        <!-- single dropdown -->
-        <select class="input-medium" id="rating4.1" name="rating4.1" required="required">
-            <option value="">Give Rating...</option>
-            <option value="1">Strongly Disagree</option>
-            <option value="2">Disagree</option>
-            <option value="3">Neutral</option>
-            <option value="4">Agree</option>
-            <option value="5">Strongly Agree</option>
-        </select>
-
-    </div>
-</div>
-
-
-<div class="control-group">
-    <label class="control-label" for="rating4.2">
-        The concepts were explained properly
-    </label>
-
-    <div class="controls">
-        <!-- single dropdown -->
-        <select class="input-medium" id="rating4.2" name="rating4.2" required="required">
-            <option value="">Give Rating...</option>
-            <option value="1">Strongly Disagree</option>
-            <option value="2">Disagree</option>
-            <option value="3">Neutral</option>
-            <option value="4">Agree</option>
-            <option value="5">Strongly Agree</option>
-        </select>
-
-    </div>
-</div>
-
-
-<div class="control-group">
-    <label class="control-label" for="rating4.3">
-        Classes were held regularly and accordingly to the time-table
-    </label>
-
-    <div class="controls">
-        <!-- single dropdown -->
-        <select class="input-medium" id="rating4.3" name="rating4.3" required="required">
-            <option value="">Give Rating...</option>
-            <option value="1">Strongly Disagree</option>
-            <option value="2">Disagree</option>
-            <option value="3">Neutral</option>
-            <option value="4">Agree</option>
-            <option value="5">Strongly Agree</option>
-        </select>
-
-    </div>
-</div>
-
-
-<div class="control-group">
-    <label class="control-label" for="rating4.4">
-        The instructor's voice was clear and understandable
-    </label>
-
-    <div class="controls">
-        <!-- single dropdown -->
-        <select class="input-medium" id="rating4.4" name="rating4.4" required="required">
-            <option value="">Give Rating...</option>
-            <option value="1">Strongly Disagree</option>
-            <option value="2">Disagree</option>
-            <option value="3">Neutral</option>
-            <option value="4">Agree</option>
-            <option value="5">Strongly Agree</option>
-        </select>
-
-    </div>
-</div>
-
-
-<div class="control-group">
-    <label class="control-label" for="rating4.5">
-        Black-board work/visual presentations were of good quality
-    </label>
-
-    <div class="controls">
-        <!-- single dropdown -->
-        <select class="input-medium" id="rating4.5" name="rating4.5" required="required">
-            <option value="">Give Rating...</option>
-            <option value="1">Strongly Disagree</option>
-            <option value="2">Disagree</option>
-            <option value="3">Neutral</option>
-            <option value="4">Agree</option>
-            <option value="5">Strongly Agree</option>
-        </select>
-
-    </div>
-</div>
-
-
-<div class="control-group">
-    <label class="control-label" for="rating4.6">
-        Topics were covered in a logical sequence
-    </label>
-
-    <div class="controls">
-        <!-- single dropdown -->
-        <select class="input-medium" id="rating4.6" name="rating4.6" required="required">
-            <option value="">Give Rating...</option>
-            <option value="1">Strongly Disagree</option>
-            <option value="2">Disagree</option>
-            <option value="3">Neutral</option>
-            <option value="4">Agree</option>
-            <option value="5">Strongly Agree</option>
-        </select>
-
-    </div>
-</div>
-
-
-<div class="control-group">
-    <label class="control-label" for="rating4.7">
-        Assignments were useful and followed the lectures
-    </label>
-
-    <div class="controls">
-        <!-- single dropdown -->
-        <select class="input-medium" id="rating4.7" name="rating4.7" required="required">
-            <option value="">Give Rating...</option>
-            <option value="1">Strongly Disagree</option>
-            <option value="2">Disagree</option>
-            <option value="3">Neutral</option>
-            <option value="4">Agree</option>
-            <option value="5">Strongly Agree</option>
-        </select>
-
-    </div>
-</div>
-
-
-<div class="control-group">
-    <label class="control-label" for="rating4.8">
-        Questions and discussions were encouraged
-    </label>
-
-    <div class="controls">
-        <!-- single dropdown -->
-        <select class="input-medium" id="rating4.8" name="rating4.8" required="required">
-            <option value="">Give Rating...</option>
-            <option value="1">Strongly Disagree</option>
-            <option value="2">Disagree</option>
-            <option value="3">Neutral</option>
-            <option value="4">Agree</option>
-            <option value="5">Strongly Agree</option>
-        </select>
-
-    </div>
-</div>
-
-
-<div class="control-group">
-    <label class="control-label" for="rating4.9">
-        Evaluation was done regularly and feedback was given
-    </label>
-
-    <div class="controls">
-        <!-- single dropdown -->
-        <select class="input-medium" id="rating4.9" name="rating4.9" required="required">
-            <option value="">Give Rating...</option>
-            <option value="1">Strongly Disagree</option>
-            <option value="2">Disagree</option>
-            <option value="3">Neutral</option>
-            <option value="4">Agree</option>
-            <option value="5">Strongly Agree</option>
-        </select>
-
-    </div>
-</div>
-
-
-<div class="control-group">
-    <label class="control-label" for="rating4.10">
-        Overall, the instruction was excellent
-    </label>
-
-    <div class="controls">
-        <!-- single dropdown -->
-        <select class="input-medium" id="rating4.10" name="rating4.10" required="required">
-            <option value="">Give Rating...</option>
-            <option value="1">Strongly Disagree</option>
-            <option value="2">Disagree</option>
-            <option value="3">Neutral</option>
-            <option value="4">Agree</option>
-            <option value="5">Strongly Agree</option>
-        </select>
-
-    </div>
-</div>
-
-
-</fieldset>
-
-<fieldset>
-    <legend>5. About the Tutorials</legend>
-    <div class="control-group">
-        <label class="control-label input-xlarge" for="rating5.1">
-            Tutorials were held regularly and followed the lectures
-        </label>
-
-        <div class="controls">
-            <!-- single dropdown -->
-            <select class="input-medium" id="rating5.1" name="rating5.1" required="required">
+            <select class="input-medium" id="rating4.1" name="rating4.1" required="required">
                 <option value="">Give Rating...</option>
                 <option value="1">Strongly Disagree</option>
                 <option value="2">Disagree</option>
@@ -469,13 +225,13 @@
 
 
     <div class="control-group">
-        <label class="control-label" for="rating5.2">
-            Tutorials clarified basic concepts taught in the lectures
+        <label class="control-label" for="rating4.2">
+            The concepts were explained properly
         </label>
 
         <div class="controls">
             <!-- single dropdown -->
-            <select class="input-medium" id="rating5.2" name="rating5.2" required="required">
+            <select class="input-medium" id="rating4.2" name="rating4.2" required="required">
                 <option value="">Give Rating...</option>
                 <option value="1">Strongly Disagree</option>
                 <option value="2">Disagree</option>
@@ -489,13 +245,13 @@
 
 
     <div class="control-group">
-        <label class="control-label" for="rating5.3">
-            Tutorials helped in learning problem-solving in a methodical way
+        <label class="control-label" for="rating4.3">
+            Classes were held regularly and accordingly to the time-table
         </label>
 
         <div class="controls">
             <!-- single dropdown -->
-            <select class="input-medium" id="rating5.3" name="rating5.3" required="required">
+            <select class="input-medium" id="rating4.3" name="rating4.3" required="required">
                 <option value="">Give Rating...</option>
                 <option value="1">Strongly Disagree</option>
                 <option value="2">Disagree</option>
@@ -509,13 +265,13 @@
 
 
     <div class="control-group">
-        <label class="control-label" for="rating5.4">
-            Questions and discussion were encouraged
+        <label class="control-label" for="rating4.4">
+            The instructor's voice was clear and understandable
         </label>
 
         <div class="controls">
             <!-- single dropdown -->
-            <select class="input-medium" id="rating5.4" name="rating5.4" required="required">
+            <select class="input-medium" id="rating4.4" name="rating4.4" required="required">
                 <option value="">Give Rating...</option>
                 <option value="1">Strongly Disagree</option>
                 <option value="2">Disagree</option>
@@ -529,13 +285,13 @@
 
 
     <div class="control-group">
-        <label class="control-label" for="rating5.5">
-            Overall, tutorials were useful
+        <label class="control-label" for="rating4.5">
+            Black-board work/visual presentations were of good quality
         </label>
 
         <div class="controls">
             <!-- single dropdown -->
-            <select class="input-medium" id="rating5.5" name="rating5.5" required="required">
+            <select class="input-medium" id="rating4.5" name="rating4.5" required="required">
                 <option value="">Give Rating...</option>
                 <option value="1">Strongly Disagree</option>
                 <option value="2">Disagree</option>
@@ -547,45 +303,229 @@
         </div>
     </div>
 
-</fieldset>
-
-<fieldset>
-
-    <legend>6. Strong and Weak points of the Course/Instructors</legend>
 
     <div class="control-group">
-        <label class="control-label" for="comment" style="width: 150px;">
-            Enter your Comment Here
+        <label class="control-label" for="rating4.6">
+            Topics were covered in a logical sequence
         </label>
 
-        <div class="controls" style="margin-left: 170px;">
-            <textarea name="comment" id="comment" rows="10" class="input-xxlarge"></textarea>
+        <div class="controls">
+            <!-- single dropdown -->
+            <select class="input-medium" id="rating4.6" name="rating4.6" required="required">
+                <option value="">Give Rating...</option>
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Agree</option>
+                <option value="5">Strongly Agree</option>
+            </select>
+
         </div>
     </div>
-</fieldset>
 
-<fieldset>
-    <button type="submit" class="btn btn-primary btn-large">Submit Feedback</button>
-</fieldset>
 
-</form>
-</div>
+    <div class="control-group">
+        <label class="control-label" for="rating4.7">
+            Assignments were useful and followed the lectures
+        </label>
 
-</div>
-</div>
+        <div class="controls">
+            <!-- single dropdown -->
+            <select class="input-medium" id="rating4.7" name="rating4.7" required="required">
+                <option value="">Give Rating...</option>
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Agree</option>
+                <option value="5">Strongly Agree</option>
+            </select>
 
-{#<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>#}
-<script src="/assets/js/jquery-1.7.1.js"></script>
-<script src="/assets/js/bootstrap.min.js"></script>
-{#<script src="/assets/js/chosen.jquery.min.js" type="text/javascript"></script>#}
-<script type="text/javascript">
-    $(document).ready(function () {
-        prettyPrint();
-    });
+        </div>
+    </div>
 
-</script>
 
-</body>
+    <div class="control-group">
+        <label class="control-label" for="rating4.8">
+            Questions and discussions were encouraged
+        </label>
 
-</html>
+        <div class="controls">
+            <!-- single dropdown -->
+            <select class="input-medium" id="rating4.8" name="rating4.8" required="required">
+                <option value="">Give Rating...</option>
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Agree</option>
+                <option value="5">Strongly Agree</option>
+            </select>
 
+        </div>
+    </div>
+
+
+    <div class="control-group">
+        <label class="control-label" for="rating4.9">
+            Evaluation was done regularly and feedback was given
+        </label>
+
+        <div class="controls">
+            <!-- single dropdown -->
+            <select class="input-medium" id="rating4.9" name="rating4.9" required="required">
+                <option value="">Give Rating...</option>
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Agree</option>
+                <option value="5">Strongly Agree</option>
+            </select>
+
+        </div>
+    </div>
+
+
+    <div class="control-group">
+        <label class="control-label" for="rating4.10">
+            Overall, the instruction was excellent
+        </label>
+
+        <div class="controls">
+            <!-- single dropdown -->
+            <select class="input-medium" id="rating4.10" name="rating4.10" required="required">
+                <option value="">Give Rating...</option>
+                <option value="1">Strongly Disagree</option>
+                <option value="2">Disagree</option>
+                <option value="3">Neutral</option>
+                <option value="4">Agree</option>
+                <option value="5">Strongly Agree</option>
+            </select>
+
+        </div>
+    </div>
+
+
+    </fieldset>
+
+    <fieldset>
+        <legend>5. About the Tutorials</legend>
+        <div class="control-group">
+            <label class="control-label input-xlarge" for="rating5.1">
+                Tutorials were held regularly and followed the lectures
+            </label>
+
+            <div class="controls">
+                <!-- single dropdown -->
+                <select class="input-medium" id="rating5.1" name="rating5.1" required="required">
+                    <option value="">Give Rating...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+
+            </div>
+        </div>
+
+
+        <div class="control-group">
+            <label class="control-label" for="rating5.2">
+                Tutorials clarified basic concepts taught in the lectures
+            </label>
+
+            <div class="controls">
+                <!-- single dropdown -->
+                <select class="input-medium" id="rating5.2" name="rating5.2" required="required">
+                    <option value="">Give Rating...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+
+            </div>
+        </div>
+
+
+        <div class="control-group">
+            <label class="control-label" for="rating5.3">
+                Tutorials helped in learning problem-solving in a methodical way
+            </label>
+
+            <div class="controls">
+                <!-- single dropdown -->
+                <select class="input-medium" id="rating5.3" name="rating5.3" required="required">
+                    <option value="">Give Rating...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+
+            </div>
+        </div>
+
+
+        <div class="control-group">
+            <label class="control-label" for="rating5.4">
+                Questions and discussion were encouraged
+            </label>
+
+            <div class="controls">
+                <!-- single dropdown -->
+                <select class="input-medium" id="rating5.4" name="rating5.4" required="required">
+                    <option value="">Give Rating...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+
+            </div>
+        </div>
+
+
+        <div class="control-group">
+            <label class="control-label" for="rating5.5">
+                Overall, tutorials were useful
+            </label>
+
+            <div class="controls">
+                <!-- single dropdown -->
+                <select class="input-medium" id="rating5.5" name="rating5.5" required="required">
+                    <option value="">Give Rating...</option>
+                    <option value="1">Strongly Disagree</option>
+                    <option value="2">Disagree</option>
+                    <option value="3">Neutral</option>
+                    <option value="4">Agree</option>
+                    <option value="5">Strongly Agree</option>
+                </select>
+
+            </div>
+        </div>
+
+    </fieldset>
+
+    <fieldset>
+
+        <legend>6. Strong and Weak points of the Course/Instructors</legend>
+
+        <div class="control-group">
+            <label class="control-label" for="comment" style="width: 150px;">
+                Enter your Comment
+            </label>
+
+            <div class="controls" style="margin-left: 170px;">
+                <textarea name="comment" placeholder="Here" id="comment" rows="10" class="input-xxlarge"></textarea>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <button type="submit" class="btn btn-primary btn-large">Submit Feedback</button>
+    </fieldset>
+
+{% endblock form %}

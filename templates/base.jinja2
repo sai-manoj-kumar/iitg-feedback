@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Course Evaluation Form A">
+    <title>
+        {% block title %}
+            IIT Guwahati CSE Feedback System
+        {% endblock title %}
+    </title>
+    {#    <link href="/css/style.css" type="text/css" rel="stylesheet"/>#}
+    <link href="/assets/css/bootstrap.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body style="background: #f5f5f5">
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="/">Home</a>
+
+            {% block formlinks %}
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li><a href="/formA">Form A</a></li>
+                        <li><a href="/formB">Form B</a></li>
+                        <li><a href="/formC">Form C</a></li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            {% endblock formlinks %}
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="hero-unit">     <!-- hero unit -->
+        {% block body %}
+
+        {% endblock body %}
+    </div>
+</div>
+{#<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>#}
+<script src="/assets/js/jquery-1.7.1.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        prettyPrint();
+    });
+
+</script>
+
+</body>
+
+</html>
+
