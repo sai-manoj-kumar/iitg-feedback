@@ -45,5 +45,6 @@ class GenerateKeys(handler.Handler):
         if error:
             self.render("generated_keys.jinja2", count=count, error=error)
         else:
-            self.render("generated_keys.jinja2", count=count)
+            keys = model.Keys.all()
+            self.render("generated_keys.jinja2", count=count, keys=keys)
 
