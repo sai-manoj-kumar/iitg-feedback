@@ -10,7 +10,13 @@ class GenerateKeys(handler.Handler):
     def post(self):
         if self.is_logged_in:
             if self.is_admin:
-                num_keys = int(self.request.get("num_keys"))
+                num_keys = self.request.get("num_keys")
+                if num_keys.isdigit() and int(num_keys) > 0:
+                    num_keys = int(num_keys)
+                else:
+                    error = 'Enter a Number greater than Zero.'
+                    self.redirect('/admin/genkeys?error=' + error)
+                    return
                 key_entries = []
                 keys = []
                 i = 0
@@ -18,7 +24,7 @@ class GenerateKeys(handler.Handler):
                     key = ''.join(random.choice(
                         'abcdefghkmnqrstuvwxyzABCDEFGHJKMNQRSTUVWXYZ' * 7 + '23456789' * 13) for x in range(10))
                     if key not in keys:
-#                        TODO check whether the key is already in the datastore
+                    #                        TODO check whether the key is already in the datastore
                         keys.append(key)
                         key_entries.append(model.Keys(keyPhrase=key, formFilled=False))
                         i += 1
@@ -35,4 +41,15 @@ class GenerateKeys(handler.Handler):
 
     def get(self):
         count = model.Keys.all().count()
-        self.render("notify_admin.jinja2", count=count)
+        error = self.request.get("error")
+
+        if error:
+            self.render("notify_admin.jinja2", count=count, error=error)
+        else:
+            self.render("notify_admin.jinja2", count=count)
+
+
+
+
+
+

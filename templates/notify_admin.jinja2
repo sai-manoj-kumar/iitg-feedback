@@ -5,7 +5,16 @@
 
 {% block body %}
     <div class="well">
-        The datastore contains a total of {{ count }} Keys.
+        {% if error is defined %}
+        <div class="alert alert-block alert-error"> {{ error }}</div>
+        {% endif %}
+
+
+        <div class="alert alert-block alert-info">
+            The datastore contains a total of {{ count }} Keys.
+        </div>
+
+
     </div>
 {% endblock body %}
 
