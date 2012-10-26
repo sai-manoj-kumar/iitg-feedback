@@ -29,8 +29,6 @@ class Handler(webapp2.RequestHandler):
         self.user = users.get_current_user()
         if self.user:
             self.is_logged_in = True
-        if self.user.nickname() in config.admins:
-            self.is_admin = True
-
-
-
+            if self.user.nickname() in config.admins:
+                self.is_admin = True
+                
