@@ -44,9 +44,9 @@ class GenerateKeys(handler.Handler):
         error = self.request.get("error")
 
         if error:
-            self.render("notify_admin.jinja2", count=count, error=error)
+            self.render("generated_keys.jinja2", count=count, error=error)
         else:
-            self.render("notify_admin.jinja2", count=count)
+            self.render("generated_keys.jinja2", count=count)
 
 
 
