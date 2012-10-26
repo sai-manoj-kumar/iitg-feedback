@@ -24,14 +24,13 @@ class GenerateKeys(handler.Handler):
                     key = ''.join(random.choice(
                         'abcdefghkmnqrstuvwxyzABCDEFGHJKMNQRSTUVWXYZ' * 7 + '23456789' * 13) for x in range(10))
                     if key not in keys:
-                    #                        TODO check whether the key is already in the datastore
-                        keys.append(key)
-                        key_entries.append(model.Keys(keyPhrase=key, formFilled=False))
-                        i += 1
+                        if model.Keys.by_name(key) is None:
+                            keys.append(key)
+                            key_entries.append(model.Keys(keyPhrase=key, formFilled=False))
+                            i += 1
                 result = db.put(key_entries)
                 if result:
                     self.redirect('/admin/genkeys')
-                #                    write("Keys generated and stored successfully")
                 else:
                     self.write("Keys Can't be stored")
             else:
@@ -47,9 +46,4 @@ class GenerateKeys(handler.Handler):
             self.render("generated_keys.jinja2", count=count, error=error)
         else:
             self.render("generated_keys.jinja2", count=count)
-
-
-
-
-
 
