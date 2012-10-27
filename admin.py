@@ -6,6 +6,7 @@ import handler
 import download
 import viewkeys
 import genkeys
+import viewdata
 
 class MainPage(handler.Handler):
     def get(self):
@@ -18,6 +19,7 @@ class MainPage(handler.Handler):
 app = webapp2.WSGIApplication([
     ('/admin/*', MainPage),
     ('/admin/viewkeys/*', viewkeys.MainPage),
+    ('/admin/viewdata/*', viewdata.MainPage),
     ('/admin/genkeys/*', genkeys.MainPage),
     ('/admin/download/*', download.MainPage)],
     debug = True)
