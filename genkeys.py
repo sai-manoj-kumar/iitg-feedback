@@ -34,8 +34,6 @@ class MainPage(handler.Handler):
                 self.write("Keys Can't be stored")
         else:
             self.write("You are not an admin and can not perform this operation.")
-        if not self.is_logged_in:
-            self.redirect(users.create_login_url(self.request.uri))
 
     def get(self):
         if self.is_admin:
@@ -49,5 +47,3 @@ class MainPage(handler.Handler):
                 self.render("generated_keys.jinja2", count = count, keys = keys)
         else:
             self.write("You are not admin and can not perform this operation.")
-        if not self.is_logged_in:
-            self.redirect(users.create_login_url(self.request.uri))

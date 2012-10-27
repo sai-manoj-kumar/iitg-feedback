@@ -7,12 +7,9 @@ import handler
 
 class MainPage(handler.Handler):
     def get(self):
-        if self.is_logged_in:
-            if self.is_admin:
-                self.render("download.jinja2")
-            else:
-                self.write("You are not an admin and can not download data")
+        if self.is_admin:
+            self.render("download.jinja2")
         else:
-            self.redirect(users.create_login_url(self.request.uri))
+            self.write("You are not an admin and can not download data")
 
 app = webapp2.WSGIApplication([('/download/data', MainPage)], debug=True)

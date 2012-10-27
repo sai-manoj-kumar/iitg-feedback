@@ -14,8 +14,6 @@ class MainPage(handler.Handler):
         else:
             self.write("You are not logged in as admin. "
                        "If you are admin, logout your google account and login to your admin account")
-        if not self.is_logged_in:
-            self.redirect(users.create_login_url(self.request.uri))
 
 app = webapp2.WSGIApplication([
     ('/admin/*', MainPage),

@@ -8,7 +8,7 @@ import jinja2
 import config
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
-jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(template_dir), autoescape=True)
+jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir), autoescape = True)
 
 class Handler(webapp2.RequestHandler):
     is_admin = False
@@ -31,4 +31,7 @@ class Handler(webapp2.RequestHandler):
             self.is_logged_in = True
             if self.user.nickname() in config.admins:
                 self.is_admin = True
+        else:
+            self.redirect(users.create_login_url(self.request.uri))
+
                 
