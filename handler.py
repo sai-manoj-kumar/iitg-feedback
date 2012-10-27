@@ -4,7 +4,6 @@ import os
 import webapp2
 from google.appengine.api import users
 import jinja2
-
 import config
 
 template_dir = os.path.join(os.path.dirname(__file__), 'templates')
@@ -31,7 +30,3 @@ class Handler(webapp2.RequestHandler):
             self.is_logged_in = True
             if self.user.nickname() in config.admins:
                 self.is_admin = True
-        else:
-            self.redirect(users.create_login_url(self.request.uri))
-
-                

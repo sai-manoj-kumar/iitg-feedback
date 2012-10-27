@@ -1,9 +1,9 @@
 __author__ = 'saimanoj'
 
-import handler
+import admin_handler
 import model
 
-class MainPage(handler.Handler):
+class MainPage(admin_handler.AdminHandler):
     def get(self):
         if self.is_admin:
             attributes = ['rating2_1', 'rating2_2', 'rating2_3', 'rating3_1', 'rating3_2', 'rating3_3', 'rating3_4',
@@ -22,6 +22,3 @@ class MainPage(handler.Handler):
             else:
                 self.render("view_data.jinja2", alert = 'No one has filled the feedback form yet.',
                     alert_type = "warning")
-        else:
-            self.write("You are not an admin and can not perform this operation.")
-

@@ -1,10 +1,9 @@
 __author__ = 'saimanoj'
 
-from google.appengine.api import users
-import handler
+import admin_handler
 import model
 
-class MainPage(handler.Handler):
+class MainPage(admin_handler.AdminHandler):
     def get(self):
         if self.is_admin:
             keys = model.Keys.all()
@@ -12,6 +11,3 @@ class MainPage(handler.Handler):
                 self.render("view_keys.jinja2", count = keys.count(), keys = keys)
             else:
                 self.render("view_keys.jinja2", error = 'No keys in the datastore.')
-        else:
-            self.write("You are not an admin and can not perform this operation.")
-

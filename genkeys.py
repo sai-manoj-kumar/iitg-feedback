@@ -1,12 +1,11 @@
 __author__ = 'saimanoj'
 
-from google.appengine.api import users
+import admin_handler
 from google.appengine.ext import db
 import random
 import model
-import handler
 
-class MainPage(handler.Handler):
+class MainPage(admin_handler.AdminHandler):
     def post(self):
         if self.is_admin:
             num_keys = self.request.get("num_keys")
@@ -32,8 +31,6 @@ class MainPage(handler.Handler):
                 self.redirect('/admin/genkeys')
             else:
                 self.write("Keys Can't be stored")
-        else:
-            self.write("You are not an admin and can not perform this operation.")
 
     def get(self):
         if self.is_admin:
@@ -45,5 +42,3 @@ class MainPage(handler.Handler):
             else:
                 keys = model.Keys.all()
                 self.render("generated_keys.jinja2", count = count, keys = keys)
-        else:
-            self.write("You are not admin and can not perform this operation.")

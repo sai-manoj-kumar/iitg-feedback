@@ -1,15 +1,11 @@
 __author__ = 'saimanoj'
 
-from google.appengine.api import users
 import webapp2
-import handler
+import admin_handler
 
-
-class MainPage(handler.Handler):
+class MainPage(admin_handler.AdminHandler):
     def get(self):
         if self.is_admin:
             self.render("download.jinja2")
-        else:
-            self.write("You are not an admin and can not download data")
 
-app = webapp2.WSGIApplication([('/download/data', MainPage)], debug=True)
+#app = webapp2.WSGIApplication([('/download/data', MainPage)], debug=True)

@@ -1,20 +1,16 @@
 __author__ = 'saimanoj'
 
-from google.appengine.api import users
 import webapp2
-import handler
+import admin_handler
 import download
 import viewkeys
 import genkeys
 import viewdata
 
-class MainPage(handler.Handler):
+class MainPage(admin_handler.AdminHandler):
     def get(self):
         if self.is_admin:
             self.render("admin.jinja2")
-        else:
-            self.write("You are not logged in as admin. "
-                       "If you are admin, logout your google account and login to your admin account")
 
 app = webapp2.WSGIApplication([
     ('/admin/*', MainPage),
@@ -23,4 +19,3 @@ app = webapp2.WSGIApplication([
     ('/admin/genkeys/*', genkeys.MainPage),
     ('/admin/download/*', download.MainPage)],
     debug = True)
-
