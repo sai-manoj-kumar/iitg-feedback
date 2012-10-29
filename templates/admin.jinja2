@@ -63,15 +63,26 @@
     </div>
 
     <div class="well">
-        <form method="post" action="/admin/genkeys">
-            <h1>
-                Key Generation
-            </h1>
-            <label style="margin-top: 20px;">
+        <h1>
+            Generate Keys
+        </h1>
+
+        <form class="form-actions" method="post" action="/admin/genkeys">
+            <label class="control-label" for="formType">
+                Select the Form Type
+                <select class="input-medium" id="formType" name="formType" required="required">
+                    <option value="">Select Form Type...</option>
+                    <option value="A">Form A</option>
+                    <option value="B">Form B</option>
+                    <option value="C">Form C</option>
+                </select>
+            </label>
+            <label>
                 No. of Keys to be generated
                 <input type="text" name="num_keys" id="num_keys" required="required">
             </label>
             <button type="submit" class="btn btn-danger btn-large">Generate Keys</button>
         </form>
     </div>
+
 {% endblock body %}

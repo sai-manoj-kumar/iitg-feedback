@@ -3,7 +3,7 @@ __author__ = 'saimanoj'
 from google.appengine.ext import db
 
 
-class FormA(db.Model):
+class FormAData(db.Model):
     keyPhrase = db.StringProperty(required = True)
     rating2_1 = db.IntegerProperty(required = True)
     rating2_2 = db.IntegerProperty(required = True)
@@ -32,7 +32,7 @@ class FormA(db.Model):
     comment = db.StringProperty()
 
 
-class FormB(db.Model):
+class FormBData(db.Model):
     keyPhrase = db.StringProperty(required = True)
     rating2_1 = db.IntegerProperty(required = True)
     rating2_2 = db.IntegerProperty(required = True)
@@ -52,7 +52,7 @@ class FormB(db.Model):
     comment = db.StringProperty()
 
 
-class Keys(db.Model):
+class FormAKeys(db.Model):
     keyPhrase = db.StringProperty(required = True)
     formFilled = db.BooleanProperty(required = True)
     timestamp = db.DateTimeProperty(auto_now_add = True)
@@ -60,4 +60,23 @@ class Keys(db.Model):
     @classmethod
     def by_name(cls, key):
         return cls.all().filter('keyPhrase = ', key).get()
+
+class FormBKeys(db.Model):
+    keyPhrase = db.StringProperty(required = True)
+    formFilled = db.BooleanProperty(required = True)
+    timestamp = db.DateTimeProperty(auto_now_add = True)
+
+    @classmethod
+    def by_name(cls, key):
+        return cls.all().filter('keyPhrase = ', key).get()
+
+class FormCKeys(db.Model):
+    keyPhrase = db.StringProperty(required = True)
+    formFilled = db.BooleanProperty(required = True)
+    timestamp = db.DateTimeProperty(auto_now_add = True)
+
+    @classmethod
+    def by_name(cls, key):
+        return cls.all().filter('keyPhrase = ', key).get()
+
 

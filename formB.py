@@ -17,11 +17,11 @@ class MainPage(handler.Handler):
             values['rating3_' + str(i)] = int(self.request.get('rating3.' + str(i)))
 
         values['comment'] = self.request.get('comment')
-        key_record = model.Keys.by_name(key)
+        key_record = model.FormBKeys.by_name(key)
 
         if key_record:
             if not key_record.formFilled:
-                feedback_entry = model.FormB(keyPhrase = key, **values)
+                feedback_entry = model.FormBData(keyPhrase = key, **values)
                 key_record.formFilled = True
                 if key_record.put() and feedback_entry.put():
                     self.write("Form B Submission Successful.")
