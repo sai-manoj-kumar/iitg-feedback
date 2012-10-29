@@ -1,22 +1,26 @@
-<html>
+{% extends "base.jinja2" %}
 
-<head>
-    <title>
-        Course Feedback Forms
-    </title>
-    <link href="/css/style.css" type="text/css" rel="stylesheet"/>
-</head>
+{% block body %}
 
-<body>
+    <div class="well" style="background: #fff">
+        <h1>Course Evaluation Forms</h1>
 
-<h1>Course Evaluation Forms</h1>
+        <hr/>
+        {% block notification %}
+        {% endblock notification %}
 
-<hr/>
-<p><a href="/formA">Form A</a></p>
-<p><a href="/formB">Form B</a></p>
-<p><a href="/formC">Form C</a></p>
+        <p>
+            <a href="/formA">Form A -- Courses Having Tutorial/Studio Component</a>
+        </p>
 
+        <p>
+            <a href="/formB">Form B -- Courses without Tutorial/Studio Component</a>
+        </p>
 
-</body>
+        <p>
+            <a href="/formC">Form C -- All laboratory courses</a>
+        </p>
 
-</html>
+    </div>
+
+{% endblock body %}

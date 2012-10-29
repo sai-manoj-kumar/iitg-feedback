@@ -10,11 +10,18 @@ class MainPage(handler.Handler):
     def post(self):
         key = self.request.get('key')
         values = {}
-        for i in range(1, 6):
-            values['rating2_' + str(i)] = int(self.request.get('rating2.' + str(i)))
+        if not key or key == '':
+            self.write('Key is not entered')
+            return
 
-        for i in range(1, 11):
-            values['rating3_' + str(i)] = int(self.request.get('rating3.' + str(i)))
+        for attr in self.formB_attributes:
+            val = self.request.get(attr)
+            if val or val != '':
+                values[attr] = int(val)
+            else:
+                self.write('You should enter all form fields')
+                return
+
 
         values['comment'] = self.request.get('comment')
         key_record = model.FormBKeys.by_name(key)
@@ -24,10 +31,10 @@ class MainPage(handler.Handler):
                 feedback_entry = model.FormBData(keyPhrase = key, **values)
                 key_record.formFilled = True
                 if key_record.put() and feedback_entry.put():
-                    self.write("Form B Submission Successful.")
+                    self.redirect('/success')
                 else:
-                    self.write("Error writing to database")
+                    self.redirect('/fail1')
             else:
-                self.write("You have already filled the form")
+                self.redirect('/fail2')
         else:
-            self.write("Entered key is wrong")
+            self.redirect('/fail3')

@@ -6,15 +6,15 @@
 {% block body %}
     <div class="well">
         {% if alert is defined %}
-            <div class="alert alert-block alert-{{alert_type}}">
+            <div class="alert alert-block alert-{{ alert_type }}">
                 <h4>{{ alert }}</h4>
             </div>
         {% endif %}
 
         {% if count is defined %}
-        <div class="alert alert-block alert-info">
-            <h4>The datastore contains {{ count }} filled forms.</h4>
-        </div>
+            <div class="alert alert-block alert-info">
+                <h4>The datastore contains {{ count }} filled forms.</h4>
+            </div>
         {% endif %}
 
         {% if records is defined and count > 0 %}
@@ -22,12 +22,14 @@
             {% for record in records %}
                 <tr>
                     {% for attr in attributes %}
-                    <td>
-                        {{ record[attr] }}
-                    </td>
+                        <td>
+                            {{ record[attr] }}
+                        </td>
                     {% endfor %}
                     <td>
-                        {{ record['comment'][:10] }}...
+                        {% if record['comment'] %}
+                            {{ record['comment'][:10] }}...
+                        {% endif %}
                     </td>
                 </tr>
             {% endfor %}
