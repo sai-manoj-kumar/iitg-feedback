@@ -2,7 +2,7 @@ __author__ = 'saimanoj'
 
 import webapp2
 import handler
-import formA
+import formA, formB, formC
 
 class MainPage(handler.Handler):
     def get(self):
@@ -14,5 +14,7 @@ class MainPage(handler.Handler):
 
 app = webapp2.WSGIApplication(
     [('/', MainPage),
-     ('/formA/*', formA.MainPage)],
+     ('/formA/*', formA.MainPage),
+     ('/formB/*', formB.MainPage),
+     ('/formC/*', formC.MainPage)],
     debug = True)

@@ -30,7 +30,7 @@ class MainPage(handler.Handler):
                 feedback_entry = model.FormA(keyPhrase=key, **values)
                 key_record.formFilled = True
                 if key_record.put() and feedback_entry.put():
-                    self.write("Form A Submission Successful.")
+                    self.write("Successfully Written in database")
                 else:
                     self.write("Error writing to database")
             else:
