@@ -22,8 +22,10 @@ class MainPage(admin_handler.AdminHandler):
                 form_data = model.FormBData.all()
                 self.response.headers['Content-Disposition'] = "attachment; filename=formB_data.csv"
             elif form_type == 'C':
-                attributes = []
-#                form_data = model.FormCData.all()
+                attributes = ['rating2_1', 'rating2_2', 'rating2_3', 'rating3_1', 'rating3_2', 'rating3_3', 'rating3_4',
+                              'rating3_5', 'rating4_1', 'rating4_2', 'rating4_3', 'rating4_4', 'rating4_5',
+                              'rating4_6', 'rating4_7', 'rating4_8', 'rating4_9', 'rating4_10']
+                form_data = model.FormCData.all()
                 self.response.headers['Content-Disposition'] = "attachment; filename=formC_data.csv"
             else:
                 self.write('Wrong Form Type')

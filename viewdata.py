@@ -23,10 +23,12 @@ class MainPage(admin_handler.AdminHandler):
                 count = form_data.count()
                 keys_count = model.FormBKeys.all().count()
             elif form_type == 'C':
-                attributes =[]
-#                form_data = model.FormCData.all()
-#                count = form_data.count()
-#                keys_count = model.FormCKeys.all().count()
+                attributes = ['rating2_1', 'rating2_2', 'rating2_3', 'rating3_1', 'rating3_2', 'rating3_3', 'rating3_4',
+                              'rating3_5', 'rating4_1', 'rating4_2', 'rating4_3', 'rating4_4', 'rating4_5',
+                              'rating4_6', 'rating4_7', 'rating4_8', 'rating4_9', 'rating4_10']
+                form_data = model.FormCData.all()
+                count = form_data.count()
+                keys_count = model.FormCKeys.all().count()
             else:
                 self.write('Wrong Form Type')
                 return
