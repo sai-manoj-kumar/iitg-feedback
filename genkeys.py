@@ -43,7 +43,7 @@ class MainPage(admin_handler.AdminHandler):
                         return
             result = db.put(key_entries)
             if result:
-                self.redirect('/admin/viewkeys')
+                self.redirect('/admin/viewkeys?viewKeys='+form_type)
             else:
                 self.write("Keys Can't be stored")
 
