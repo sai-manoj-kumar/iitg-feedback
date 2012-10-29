@@ -2,8 +2,9 @@ __author__ = 'saimanoj'
 
 import webapp2
 import admin_handler
-import download
+import downloadFormData
 import viewkeys
+import downloadkeys
 import genkeys
 import viewdata
 
@@ -15,7 +16,8 @@ class MainPage(admin_handler.AdminHandler):
 app = webapp2.WSGIApplication([
     ('/admin/*', MainPage),
     ('/admin/viewkeys/*', viewkeys.MainPage),
+    ('/admin/downloadkeys/*', downloadkeys.MainPage),
     ('/admin/viewdata/*', viewdata.MainPage),
     ('/admin/genkeys/*', genkeys.MainPage),
-    ('/admin/download/*', download.MainPage)],
+    ('/admin/download/*', downloadFormData.MainPage)],
     debug = True)
