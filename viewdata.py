@@ -28,7 +28,7 @@ class MainPage(admin_handler.AdminHandler):
 
             if form_data and 0 < count < keys_count:
                 self.render("view_data.jinja2", count = count, records = form_data, attributes = attributes)
-            elif count == keys_count:
+            elif count == keys_count and count != 0:
                 self.render("view_data.jinja2", count = count, records = form_data, attributes = attributes,
                     alert = 'Everyone has filled the feedback form.', alert_type = "success")
             else:
