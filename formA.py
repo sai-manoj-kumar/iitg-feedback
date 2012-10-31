@@ -16,7 +16,7 @@ class MainPage(handler.Handler):
 
         for attr in self.formA_attributes:
             val = self.request.get(attr)
-            if val or val != '':
+            if (val == '1' or val == '2' or val == '3' or val == '4' or val == '5'):
                 values[attr] = int(val)
             else:
                 self.write('You should enter all form fields')
