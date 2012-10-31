@@ -5,6 +5,11 @@
 {% endblock heading %}
 
 {% block form %}
+    {% if error is defined %}
+        <div class="alert alert-block alert-error">
+            <h4>{{ error }}</h4>
+        </div>
+    {% endif %}
 
     <fieldset>
         <legend>1.Your Unique Key Phrase</legend>

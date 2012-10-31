@@ -11,15 +11,15 @@ class MainPage(handler.Handler):
         key = self.request.get('key')
         values = {}
         if not key or key == '':
-            self.write('Key is not entered')
+            self.render('formA.jinja2', error = 'Key is not entered')
             return
 
         for attr in self.formA_attributes:
             val = self.request.get(attr)
-            if val or val != '':
+            if (val == '1' or val == '2' or val == '3' or val == '4' or val == '5'):
                 values[attr] = int(val)
             else:
-                self.write('You should enter all form fields')
+                self.render('formA.jinja2', error = 'You should select all the options')
                 return
 
         values['comment'] = self.request.get('comment')
