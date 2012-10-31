@@ -7,6 +7,7 @@ import viewkeys
 import downloadkeys
 import genkeys
 import viewdata
+import logout
 
 class MainPage(admin_handler.AdminHandler):
     def get(self):
@@ -15,6 +16,7 @@ class MainPage(admin_handler.AdminHandler):
 
 app = webapp2.WSGIApplication([
     ('/admin/*', MainPage),
+    ('/admin/logout/*', logout.MainPage),
     ('/admin/viewkeys/*', viewkeys.MainPage),
     ('/admin/downloadkeys/*', downloadkeys.MainPage),
     ('/admin/viewdata/*', viewdata.MainPage),

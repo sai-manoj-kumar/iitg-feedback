@@ -5,6 +5,14 @@
 {% endblock title %}
 
 {% block formlinks %}
+    <div class="btn-group pull-right">
+        <a class="btn btn-inverse dropdown-toggle" data-toggle="dropdown" href="#">
+            <i class="icon-user icon-white"></i>
+            Administration <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li><a href="/admin/logout">Logout</a></li>
+        </ul>
+    </div>
 {% endblock formlinks %}
 
 {% block body %}
