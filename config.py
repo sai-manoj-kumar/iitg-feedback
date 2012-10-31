@@ -1,3 +1,3 @@
 __author__ = 'saimanoj'
 
-admins = ['admin']
+admins = ['ysaimanojkumar']
