@@ -7,6 +7,7 @@ import failOne
 import failTwo
 import failThree
 import success
+import credits
 
 class MainPage(handler.Handler):
     def get(self):
@@ -18,6 +19,7 @@ class MainPage(handler.Handler):
 
 app = webapp2.WSGIApplication(
     [('/', MainPage),
+     ('/credits/*', credits.MainPage),
      ('/success/*', success.MainPage),
      ('/fail1/*', failOne.MainPage),
      ('/fail2/*', failTwo.MainPage),
