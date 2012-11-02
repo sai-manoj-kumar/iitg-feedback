@@ -18,10 +18,10 @@ class MainPage(handler.Handler):
 
 app = webapp2.WSGIApplication(
     [('/', MainPage),
-     ('/success', success.MainPage),
-     ('/fail1', failOne.MainPage),
-     ('/fail2', failTwo.MainPage),
-     ('/fail3', failThree.MainPage),
+     ('/success/*', success.MainPage),
+     ('/fail1/*', failOne.MainPage),
+     ('/fail2/*', failTwo.MainPage),
+     ('/fail3/*', failThree.MainPage),
      ('/formA/*', formA.MainPage),
      ('/formB/*', formB.MainPage),
      ('/formC/*', formC.MainPage)],
