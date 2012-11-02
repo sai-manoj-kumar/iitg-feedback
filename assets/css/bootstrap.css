@@ -1793,7 +1793,7 @@ legend + .control-group {
 .form-horizontal .control-label {
     float: left;
     /*original: width: 140px;*/
-    width: 380px;
+    width: 480px;
     padding-top: 5px;
     text-align: right;
 }
@@ -1802,7 +1802,7 @@ legend + .control-group {
     *display: inline-block;
     *padding-left: 20px;
     /*original: margin-left: 180px;*/
-    margin-left: 420px;
+    margin-left: 520px;
     *margin-left: 0;
 }
 
