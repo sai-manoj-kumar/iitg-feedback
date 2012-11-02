@@ -19,7 +19,7 @@ class MainPage(handler.Handler):
             if (val == '1' or val == '2' or val == '3' or val == '4' or val == '5'):
                 values[attr] = int(val)
             else:
-                self.render('formC.jinja2', error = 'Key is not entered')
+                self.render('formC.jinja2', error = 'You should select all the options')
                 return
 
         values['comment'] = self.request.get('comment')
