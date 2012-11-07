@@ -9,5 +9,5 @@ class AdminHandler(handler.Handler):
         if not self.is_logged_in:
             self.redirect(users.create_login_url(self.request.uri))
         elif not self.is_admin:
-            self.write("You are not logged in as admin.\n"
-                       "If you are admin, logout your current google account and login to your admin account.")
+            self.write('You are not logged in as admin.\n'
+                       'If you are admin, <a href="/admin/logout">logout</a> your current google account and login to your admin account.')
